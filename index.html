@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas Sanas - Mascotas Felices</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+    <h1>
+        <img src="imagenes/logo.png" alt="Logo Huellas Sanas" class="logo-img">
+        Huellas sanas
+    </h1>
+    <nav>
+        <a href="index.html">inicio</a>
+        <a href="productos.html">productos</a>
+        <a href="registros.html">registrarse</a>
+        <a href="servicios.html">servicios</a>
+        <a href="#">contactos</a>
+    </nav>
+</header>
+<main>
+    <!-- CAJA DE BIENVENIDA / SUBTÍTULO DESTACADO -->
+    <header class="bienvenida-caja">
+        <span class="icono-destacado">🐾</span>
+        <p class="subtitulo-destacado">
+            El cuidado que tu mascota merece:
+            <span>Salud, higiene y sus productos favoritos.</span>
+        </p>
+    </header>
+    <!-- Sección de bienvenida -->
+    <section class="bienvenida">
+        <h2>Bienvenidos a Huellas Sanas</h2>
+        <p>Nos dedicamos al cuidado integral de tus mascotas. Ofrecemos alimentos de alta calidad, accesorios y servicios veterinarios especializados.</p>
+    </section>
+
+    <!-- Sección Multimedia -->
+    <section class="multimedia-section">
+        <h2>Conoce más sobre nosotros</h2>
+
+        <div class="media-container">
+
+            <!-- 1. VIDEO DE PRESENTACIÓN -->
+            <article class="media-item">
+                <h3>Video Institucional</h3>
+                <video controls width="100%">
+                    <source src="multimedia/video-tienda.mp4" type="video/mp4">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </article>
+
+            <!-- 3. AUDIO ADICIONAL -->
+            <article class="media-item">
+                <h3>Consejos de Salud Veterinaria (Audio)</h3>
+                <p>Escucha las recomendaciones de nuestros especialistas sobre nutrición animal:</p>
+                <audio controls>
+                    <source src="multimedia/audio-consejos.mp3" type="audio/mpeg">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </article>
+
+        </div>
+    </section>
+</main>
+
+<main>
+    <!-- SECCIÓN ATENCIÓN VETERINARIA (CARRUSEL SIN JAVASCRIPT) -->
+    <section class="servicios-banner-seccion">
+        <h2>Atención veterinaria</h2>
+
+        <div class="carrusel-contenedor">
+
+            <ul class="servicios-banner-lista" id="carrusel-servicios">
+                <li id="servicio-1">
+                    <article class="banner-card">
+                        <img src="imagenes/consulta.jpg" alt="Consulta veterinaria">
+                        <header class="banner-overlay">
+                            <h3>Consulta veterinaria</h3>
+                            <p>Evaluación general de la salud y diagnóstico para tu mascota.</p>
+                        </header>
+                        <!-- Flechas directas con etiquetas <a> de HTML -->
+                        <a href="#servicio-5" class="carrusel-btn btn-izq" aria-label="Anterior">‹</a>
+                        <a href="#servicio-2" class="carrusel-btn btn-der" aria-label="Siguiente">›</a>
+                    </article>
+                </li>
+
+                <li id="servicio-2">
+                    <article class="banner-card">
+                        <img src="imagenes/vacunacion.jpg" alt="Vacunación">
+                        <header class="banner-overlay">
+                            <h3>Vacunación</h3>
+                            <p>Protección esencial para prevenir enfermedades.</p>
+                        </header>
+                        <a href="#servicio-1" class="carrusel-btn btn-izq" aria-label="Anterior">‹</a>
+                        <a href="#servicio-3" class="carrusel-btn btn-der" aria-label="Siguiente">›</a>
+                    </article>
+                </li>
+
+                <li id="servicio-3">
+                    <article class="banner-card">
+                        <img src="imagenes/baño.jpg" alt="Baño y peluquería">
+                        <header class="banner-overlay">
+                            <h3>Baño y peluquería</h3>
+                            <p>Servicio completo de higiene, estética y cuidado.</p>
+                        </header>
+                        <a href="#servicio-2" class="carrusel-btn btn-izq" aria-label="Anterior">‹</a>
+                        <a href="#servicio-4" class="carrusel-btn btn-der" aria-label="Siguiente">›</a>
+                    </article>
+                </li>
+
+                <li id="servicio-4">
+                    <article class="banner-card">
+                        <img src="imagenes/emergencia.jpg" alt="Atención de emergencia">
+                        <header class="banner-overlay">
+                            <h3>Atención de emergencia</h3>
+                            <p>Asistencia médica inmediata en situaciones críticas.</p>
+                        </header>
+                        <a href="#servicio-3" class="carrusel-btn btn-izq" aria-label="Anterior">‹</a>
+                        <a href="#servicio-5" class="carrusel-btn btn-der" aria-label="Siguiente">›</a>
+                    </article>
+                </li>
+
+                <li id="servicio-5">
+                    <article class="banner-card">
+                        <img src="imagenes/cita.jpg" alt="Cita veterinaria">
+                        <header class="banner-overlay">
+                            <h3>Cita veterinaria</h3>
+                            <p>Reserva con nuestros profesionales sin demoras.</p>
+                        </header>
+                        <a href="#servicio-4" class="carrusel-btn btn-izq" aria-label="Anterior">‹</a>
+                        <a href="#servicio-1" class="carrusel-btn btn-der" aria-label="Siguiente">›</a>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: PRODUCTOS DESTACADOS EN RECTÁNGULO CONTENEDOR CON TARJETAS CUADRADAS -->
+    <section class="seccion-productos-marco">
+        <h2>Productos destacados</h2>
+
+        <div class="productos-destacados-grid">
+            <article class="tarjeta-producto">
+                <div class="img-contenedor">
+                    <img src="imagenes/ricocan.jpg" alt="Alimento para perros">
+                </div>
+                <div class="tarjeta-info">
+                    <h3>Alimento para perros</h3>
+                    <p>Alimento balanceado para perros adultos.</p>
+                    <p class="precio-tag">S/ 45.00</p>
+                    <a href="#" class="btn-producto">Ver producto</a>
+                </div>
+            </article>
+
+            <article class="tarjeta-producto">
+                <div class="img-contenedor">
+                    <img src="imagenes/gato.jpg" alt="Alimento para gatos">
+                </div>
+                <div class="tarjeta-info">
+                    <h3>Alimento para gatos</h3>
+                    <p>Alimento nutritivo para gatos.</p>
+                    <p class="precio-tag">S/ 38.00</p>
+                    <a href="#" class="btn-producto">Ver producto</a>
+                </div>
+            </article>
+
+            <article class="tarjeta-producto">
+                <div class="img-contenedor">
+                    <img src="imagenes/juguete.jpg" alt="Juguetes para mascotas">
+                </div>
+                <div class="tarjeta-info">
+                    <h3>Juguete para mascotas</h3>
+                    <p>Juguete para entretener a tu mascota.</p>
+                    <p class="precio-tag">S/ 20.00</p>
+                    <a href="#" class="btn-producto">Ver producto</a>
+                </div>
+            </article>
+
+            <article class="tarjeta-producto">
+                <div class="img-contenedor">
+                    <img src="imagenes/jaula-hamster.jpg" alt="Jaula para hámster">
+                </div>
+                <div class="tarjeta-info">
+                    <h3>Jaula para hámster</h3>
+                    <p>Jaula cómoda y segura para hámsters.</p>
+                    <p class="precio-tag">S/ 65.00</p>
+                    <a href="#" class="btn-producto">Ver producto</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Huellas Sanas. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

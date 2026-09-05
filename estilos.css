@@ -1,0 +1,361 @@
+/* ==========================================================
+   1. RESET Y CONFIGURACIÓN BASE
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f9f9;
+    color: #333333;
+}
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================================== */
+header {
+    background-color: #2e8b57;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #246b43;
+}
+
+/* ==========================================================
+   3. SECCIONES Y TÍTULOS GENERALES
+   ========================================================== */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #2e8b57;
+    border-bottom: 3px solid #e0f2fe;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* CAJA DE BIENVENIDA / SUBTÍTULO DESTACADO */
+.bienvenida-caja {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    background: linear-gradient(135deg, #e6f4ea 0%, #f0fdf4 100%);
+    border: 1px solid #bbf7d0;
+    border-left: 8px solid #2e8b57;
+    padding: 20px 28px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 14px rgba(46, 139, 87, 0.08);
+    text-align: left;
+    width: 100%;
+}
+
+.icono-destacado {
+    font-size: 2.2rem;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.subtitulo-destacado {
+    font-size: 1.67rem;
+    color: #1e293b;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.subtitulo-destacado span {
+    color: #2e8b57;
+    font-weight: 800;
+    display: inline;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+}
+
+/* Tira horizontal en una sola fila (impide que se apilen abajo) */
+.servicios-banner-lista {
+    list-style: none;
+    padding: 0;
+    /* ==========================================================
+      4. CARRUSEL DE SERVICIOS EN UNA SOLA FILA (Puro CSS / Sin JS)
+      ========================================================== */
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Fuerza a mantenerse en una sola fila */
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Movimiento fluido con las flechas */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Oculta barra en Firefox */
+}
+
+.servicios-banner-lista::-webkit-scrollbar {
+    display: none; /* Oculta barra en Chrome/Safari/Edge */
+}
+
+/* Cada ítem toma el 100% exacto del contenedor */
+.servicios-banner-lista li {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+/* Contenedor y tamaño de las tarjetas de servicios */
+.banner-card {
+    position: relative;
+    width: 100%;
+    height: 380px; /* Tamaño controlado para evitar imágenes gigantes */
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.banner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(36, 107, 67, 0.92) 0%, rgba(46, 139, 87, 0.7) 55%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    color: #ffffff;
+    max-width: 55%;
+    z-index: 2;
+}
+
+.banner-overlay h3 {
+    font-size: 2.1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.banner-overlay p {
+    font-size: 1.05rem;
+    color: #f0fdf4;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Botones flotantes (Enlaces HTML con flechas) */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    color: #2e8b57;
+    border: 2px solid #e2e8f0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-btn:hover {
+    background-color: #2e8b57;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn-izq {
+    left: 15px;
+}
+
+.btn-der {
+    right: 15px;
+}
+
+/* ==========================================================
+   5. PRODUCTOS DESTACADOS (4 Tarjetas en 1 Fila con Efecto Hover)
+   ========================================================== */
+
+/* Contenedor en cuadrícula de 4 columnas iguales */
+.productos-destacados-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Tarjeta de producto */
+.tarjeta-producto {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* EFECTO HOVER: Eleva la tarjeta y genera sombra suave al pasar el mouse */
+.tarjeta-producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(46, 139, 87, 0.2);
+    border-color: #2e8b57;
+}
+
+/* Contenedor de la imagen del producto */
+.tarjeta-producto .img-contenedor {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8fafc;
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* EFECTO HOVER EN IMAGEN: Zoom suave */
+.tarjeta-producto:hover img {
+    transform: scale(1.08);
+}
+
+/* Contenido/Texto dentro de la tarjeta */
+.tarjeta-info {
+    padding: 18px 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.tarjeta-info h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.tarjeta-info p {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.precio-tag {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #2e8b57;
+    margin-bottom: 12px;
+}
+
+/* Botón de acción dentro de cada tarjeta */
+.btn-producto {
+    background-color: #2e8b57;
+    color: #ffffff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-producto:hover {
+    background-color: #246b43;
+}
+
+/* ==========================================================
+   ADAPTACIÓN RESPONSIVA (Móviles y Tablets)
+   ========================================================== */
+@media (max-width: 900px) {
+    /* En tablets muestra 2 columnas en productos */
+    .productos-destacados-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    /* En celulares muestra 1 columna centrada en productos */
+    .productos-destacados-grid {
+        grid-template-columns: 1fr;
+    }
+}

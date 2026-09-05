@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regístrate en Huellas Sanas para recibir ofertas y novedades">
+    <title>Registro | Huellas Sanas</title>
+<link rel="stylesheet"href="estilos.css">
+    <link rel="stylesheet" href="EstiloRegistros.css">
+</head>
+<body>
+
+<header>
+    <h1>Huellas Sanas</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="registros.html">Registro</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Registro de Usuario</h2>
+        <p>Regístrate para acceder a nuestros productos y servicios exclusivos.</p>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan">
+            </div>
+
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required placeholder="Ej. Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}" placeholder="Ej. 987654321">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña (Mínimo 6 caracteres):</label>
+                <input type="password" id="password" name="password" required minlength="6">
+            </div>
+
+            <div class="form-group">
+                <label for="mascota">Tipo de mascota principal:</label>
+                <select id="mascota" name="mascota" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                    <option value="hamster">Hámster</option>
+                    <option value="ave">Ave</option>
+                </select>
+            </div>
+
+            <button type="submit">Completar Registro</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Huellas Sanas. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
